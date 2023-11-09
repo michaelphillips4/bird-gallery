@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+h1 {
+  text-align: center;
+  font-family: Inter;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.image-container {
+  width: 25%;
+  margin: 2px;
+}
+
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+
+.image-container {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+}
