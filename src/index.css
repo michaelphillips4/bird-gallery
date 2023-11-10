@@ -3,13 +3,27 @@ body {
   font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin-left: 50px;
-  margin-right: 50px;
+  text-align: center;
+  color: rgb(30, 29, 29);
+  background-color: rgb(244, 241, 237);
+  padding-top: 10px;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+main {
+  background-color: white;
+  border-radius: 5px;
+  margin: auto;
 }
 
 h1 {
   text-align: center;
   font-family: Inter;
+  font-size: 4vw;
+  margin: 6px;
+  text-shadow: 4px 4px 10px grey;
+  padding: 20px;
 }
 
 .flex-container {
@@ -25,21 +39,36 @@ img {
 }
 
 .image-container {
-  width: 25%;
-  margin: 2px;
+  width: 20%;
+  margin: 4px;
 }
 
 @media (max-width: 800px) {
+ 
   .flex-container {
     flex-direction: column;
   }
 
-.image-container {
-    width: 100%;
+  .image-container {
+    width: 98%;
   }
 
   img {
     max-width: 100%;
   }
 
+  h1 {
+    font-size: 12vw;
+  }
+
+  .dash {
+    visibility: hidden;
+  }
+
+  body {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
 }

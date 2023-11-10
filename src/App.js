@@ -1,4 +1,3 @@
-import './App.css';
 import React, { useState, useEffect } from 'react';
 
 function App() {
@@ -16,7 +15,9 @@ function App() {
       .then((data) => {
         console.log(data);
         let temp = [];
-        data.images.filter((e) => e.name.endsWith(".JPG")).forEach((e) => {
+        data.images.filter(
+          (e) => e.name.toLowerCase().endsWith(".jpg") || 
+                 e.name.toLowerCase().endsWith(".jpeg")).forEach((e) => {
           const path = `${FILE_STORE}${e.name}`;
           const imageElement = new Image();
           imageElement.src = path;
@@ -32,14 +33,22 @@ function App() {
   );
 
   return (
-    <div className="App">
-      <h1>Bird Log</h1>
-
-      <div className='flex-container'>
-        {birds.map((p, i) => <div key={i} className="image-container"><img src={p} alt='Bird' /></div>)}
-      </div>
-
-    </div>
+    <main>
+      <header>
+         <h1>Bird Log <span className='dash'>-</span> <small>michael phillips</small></h1>
+      </header>
+      <section className='flex-container'>
+        {birds.map((p, i) => 
+        <div key={i} className="image-container"><a href={p}><img src={p} alt='Bird' /></a></div>
+        )}
+      </section>
+      <footer>
+         <p>v1.0 
+          <br />
+         &copy;  michael phillips 2022
+        </p>
+    </footer>
+    </main>
   );
 }
 
