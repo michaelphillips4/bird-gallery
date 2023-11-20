@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 function App() {
 
   const [birds, setBirds] = useState([{}]);
-  const FILE_STORE = "http://area2-documentsstore.s3-website.eu-west-2.amazonaws.com/";
+  const FILE_STORE = "https://area2-documentsstore.s3.eu-west-2.amazonaws.com/";
   const FILE_STORE_MAP = "https://area2-maps.s3.eu-west-2.amazonaws.com/data.json";
 
   useEffect(() => {
@@ -36,15 +36,15 @@ function App() {
   return (
     <main>
       <header>
-         <h1>Bird Log <span className='dash'>-</span> <small>michael phillips</small></h1>
+         <h1>Bird Log &nbsp;<small> michael phillips</small></h1>
       </header>
       <section className='flex-container'>
         {birds.map((p, i) => 
-        <a href={p.path}><img src={p.thumb} alt='Bird' /></a>
+        <a href={p.path} key={i}><img src={p.thumb} alt='Bird' /></a>
         )}
       </section>
       <footer>
-         <p>v1.0 
+         <p>v1.1 
           <br />
          &copy;  michael phillips 2022
         </p>
